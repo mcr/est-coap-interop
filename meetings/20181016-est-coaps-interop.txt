@@ -1,0 +1,158 @@
+EST-COAPS virtual interoperation session #1 (scroll down for newer meetings)
+
+
+Who is here:
+	  1. Bjorn Elmers, Nexus
+		2. Joel (RISE/SICS, NexusGroup), and Shahid
+		3. Michael Richardson (Sandelman)
+		4. Peter van der Stok
+		5. Thomas Werner, SIEMENS
+		
+	
+Groups here:
+	1. RISE/SICS - client EST-COAPS
+	2. NexusGroup - server EST-COAPS
+	3. Sandelman - server, rudamentary client
+	4. Siemens
+
+
+obiwan-[~](2.4.1) mcr 10211 %host eeylops.sandelman.ca 
+eeylops.sandelman.ca has address 209.87.249.26
+eeylops.sandelman.ca has IPv6 address 2607:f0b0:f:3::26
+
+http://13.80.5.221:8080/pgwy/ping   - UDP, COAPS to port 5684.
+coaps://13.80.5.221:5684/.well-known/est/coap/
+
+calfornium for java.
+
+
+Thomas Werner: introduced by Panos.
+   working with Oscar, Oliver at Fairhair Alliance.
+   server side component for domain registrar.
+   HTTP + COAP, COAP-EST, also for BRSKI.
+
+Wish to exchange a basic certificate for trust establishment. and doing the initial enrolment.
+
+NEXUS has some trust anchors to exchange.
+
+Trust anchors can be imported by all.
+Exhange IdevID
+Each reponsible for generating IdevID and produce certificate as shared TA.
+
+1) share trust anchors for IDevID.
+2) have "allow all" policy for server side policy.
+3) 
+
+IPv4 vs IPv6?  Instance hosted on AWS, only supports IPv4.
+  RISE SICS talks IPv6, Nexus talks IPv4, we have solved it through:
+  https://jool.mx/en/documentation.html
+  
+Test cases with delays.  http://www.sandelman.ca/tmp/interop-spec-est-coaps.html
+
+Set up a Google Sheets page with X x Y list of test cases X end-points, and we can mark columns/rows as not yet implemented.
+	https://docs.google.com/spreadsheets/d/1LMMrau0D8ht0CASDZd7NLDKdCn3e0r57cnahyx-U2K8/edit?usp=sharing
+
+Discussion on: should we assume that coaps-paths _always_ contain the ".well-known"-prefix?
+
+/.well-known/est/sen  -> maps to: /e/sen
+
+
+
+Discovery will be at: "/.well-known/core" -OK
+e.g.: the simpleenroll endpoint will be:  
+    Option 1) "/.well-known/est/sen"   ---> Option 1 is preferred for the beginning of interOp
+    Option 2) "/est/sen" 
+
+
+Oct. 16: next meeting.
+Oct. 23: third meeting.
+
+Q1: Fix a number of examples that should be POST rather than GET.
+
+Q2: Got impression that everything was CBOR encapsulated... 
+  No, just multipart reply for server generated key.
+  
+  
+
+
+
+
+
+EST-COAPS virtual interoperation session #2 (scroll down for newer meetings)
+October 16, 2018
+   connecting to conference: https://appear.in/est-coaps
+
+Who is here:
+	1. Michael Richardson (Sandelman)
+	2. Björn Elmers (Nexusgroup)
+	2. <PLEASE SIGN IN>
+		
+Groups here:
+	1. Sandelman - server, rudamentary client
+	2. Nexusgroup, server
+
+
+1) What is the client's expectation of the trust anchor?
+   The client will have installed the PKI of the server.  That's part of the factory installation.
+   Also Cisco clients do the same thing.
+   
+2) The servers have pre-installed the CA of the client.
+    We might also be doing trust-ALL.
+    
+    Thomas can get discovery from RISE/nexus /.well-known/core?rt= discovery.
+    
+    client is tinyDTLS (Thomas)
+    Bjorn server is using Californium for CoAP and DTLS.
+
+DID THE CHANNEL SAY OPEN?
+
+
+Nexus device factory root ca:
+-----BEGIN CERTIFICATE-----
+MIIBoTCCAUegAwIBAgIQUWhcFQmjqnq+5vB5u2U9FjAKBggqhkjOPQQDAjA4MQsw
+CQYDVQQGEwJTRTESMBAGA1UEChMJRVNULUNvQVBTMRUwEwYDVQQDEwxFU1QtQ29B
+UFMgQ0EwHhcNMTgxMDAzMTU1NzQ1WhcNMjMxMDAzMTM1NzQ1WjA4MQswCQYDVQQG
+EwJTRTESMBAGA1UEChMJRVNULUNvQVBTMRUwEwYDVQQDEwxFU1QtQ29BUFMgQ0Ew
+WTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAATOs6B5mPZmt04vEXFeuuYFXuf8Dujk
+E9ecw/SUJ9+Oqj/JWHruqcGZktzYZzxDBHh2E3MiA/y10Jhx7hpD8cZzozMwMTAP
+BgNVHRMBAf8EBTADAQH/MBEGA1UdDgQKBAhKcn9qXZI3+TALBgNVHQ8EBAMCAQYw
+CgYIKoZIzj0EAwIDSAAwRQIgVxgECX9eoEF9ZAtP1eh1mODKg0O4cw+QTQYZStDE
+pJgCIQCKlPv/sSE9RHWbg4jOfCt19VxiQCnadpRu6zoaEnraRA==
+-----END CERTIFICATE-----
+
+Nexus device factory intermediate ca:
+-----BEGIN CERTIFICATE-----
+MIIClzCCAjygAwIBAgIQFQI+77owVy9z/qm3qHcqyjAKBggqhkjOPQQDAjA4MQsw
+CQYDVQQGEwJTRTESMBAGA1UEChMJRVNULUNvQVBTMRUwEwYDVQQDEwxFU1QtQ29B
+UFMgQ0EwHhcNMTgxMDAzMTU1NzQ4WhcNMjMxMDAzMTM1NzQ1WjBHMQswCQYDVQQG
+EwJTRTESMBAGA1UEChMJRVNULUNvQVBTMSQwIgYDVQQDExtFU1QtQ29BUFMgRGV2
+aWNlIEZhY3RvcnkgQ0EwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAATjJByuiEos
+XJerkQQXgcmhi4kp6Y5S3bwarKx9JiqtIL+Dy9TnWYlM6fu+v/nZRbeuZ7Aa0Rh+
+3UsVymbX1F74o4IBFzCCARMwDwYDVR0TAQH/BAUwAwEB/zARBgNVHQ4ECgQISGRi
+beN63pkwEwYDVR0jBAwwCoAISnJ/al2SN/kwCwYDVR0PBAQDAgEGMIHKBgNVHR8E
+gcIwgb8wgbyggbmggbaGgbNsZGFwOi8vbG9jYWxob3N0L0NOPUVTVC1Db0FQUyUy
+MENBLENOPUNEUCxDTj1QdWJsaWMlMjBLZXklMjBTZXJ2aWNlcyxDTj1TZXJ2aWNl
+cyxDTj1Db25maWd1cmF0aW9uLGRjPWV4YW1wbGUsZGM9Y29tP2NlcnRpZmljYXRl
+UmV2b2NhdGlvbkxpc3Q/YmFzZT9vYmplY3RDbGFzcz1DUkxEaXN0cmlidXRpb25Q
+b2ludDAKBggqhkjOPQQDAgNJADBGAiEA5BXwhOgsHm2vvOA4Ie+8cZeCHHhtnY5B
+1fuYU2HPwVECIQCcm4tnqyOhU61RZ8EgO8nfU7LREuA8VC9RlXKTqypKDQ==
+-----END CERTIFICATE-----
+        
+SICS-Nexus preinstalled client factory cert:
+-----BEGIN CERTIFICATE-----
+MIIBxDCCAWmgAwIBAgIQVjJVxv1mZG40rzmmXBv2dTAKBggqhkjOPQQDAjBHMQsw
+CQYDVQQGEwJTRTESMBAGA1UEChMJRVNULUNvQVBTMSQwIgYDVQQDExtFU1QtQ29B
+UFMgRGV2aWNlIEZhY3RvcnkgQ0EwHhcNMTgxMDAzMTU1NzUxWhcNMjAxMDAzMTU1
+NzUxWjBEMQswCQYDVQQGEwJTRTESMBAGA1UEChMJRVNULUNvQVBTMSEwHwYDVQQD
+ExhFU1QtQ29BUFMgZGV2aWNlIGZhY3RvcnkwWTATBgcqhkjOPQIBBggqhkjOPQMB
+BwNCAAQmM00M5rVcG0a4T+Ie3QLTdHOg0GNlPRkErQ9l24we2WP72bl67oKuN5gP
+r2V5P90bFnTQw9wbb8AJN8J42V21ozowODARBgNVHQ4ECgQIRqii2r7NpfAwEwYD
+VR0jBAwwCoAISGRibeN63pkwDgYDVR0PAQH/BAQDAgWgMAoGCCqGSM49BAMCA0kA
+MEYCIQD75xnbqTxhrvCH33qSH68CZWJdvO1S94vz1fHROfFk2AIhAMaE73dqUf3d
+YMBZx8freX5zz/8Trx2S/yospSJLrESX
+-----END CERTIFICATE-----
+
+
+        
+
+    

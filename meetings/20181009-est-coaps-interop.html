@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>est-coaps-interop</title>
+<meta name="generator" content="Etherpad">
+<meta name="author" content="Etherpad">
+<meta name="changedby" content="Etherpad">
+<meta charset="utf-8">
+<style>
+* {
+  font-family: arial, sans-serif;
+  font-size: 13px;
+  line-height: 17px;
+}
+ul.indent {
+  list-style-type: none;
+}
+ol {
+  list-style-type: none;
+  padding-left: 0;
+}
+body > ol {
+  counter-reset: first second third fourth fifth sixth seventh eigth ninth tenth eleventh twelth thirteenth fourteenth fifteenth sixteenth;
+}
+ol > li:before {
+  content: counter(first) ". ";
+  counter-increment: first;
+}
+ol > ol > li:before {
+  content: counter(first) "." counter(second) ". ";
+  counter-increment: second;
+}
+ol > ol > ol > li:before {
+  content: counter(first) "." counter(second) "." counter(third) ". ";
+  counter-increment: third;
+}
+ol > ol > ol > ol > li:before {
+  content: counter(first) "." counter(second) "." counter(third) "." counter(fourth) ". ";
+  counter-increment: fourth;
+}
+ol > ol > ol > ol > ol > li:before {
+  content: counter(first) "." counter(second) "." counter(third) "." counter(fourth) "." counter(fifth) ". ";
+  counter-increment: fifth;
+}
+ol > ol > ol > ol > ol > ol > li:before {
+  content: counter(first) "." counter(second) "." counter(third) "." counter(fourth) "." counter(fifth) "." counter(sixth) ". ";
+  counter-increment: sixth;
+}
+ol > ol > ol > ol > ol > ol > ol > li:before {
+  content: counter(first) "." counter(second) "." counter(third) "." counter(fourth) "." counter(fifth) "." counter(sixth) "." counter(seventh) ". ";
+  counter-increment: seventh;
+}
+ol > ol > ol > ol > ol > ol > ol > ol > li:before {
+  content: counter(first) "." counter(second) "." counter(third) "." counter(fourth) "." counter(fifth) "." counter(sixth) "." counter(seventh) "." counter(eigth) ". ";
+  counter-increment: eigth;
+}
+ol > ol > ol > ol > ol > ol > ol > ol > ol > li:before {
+  content: counter(first) "." counter(second) "." counter(third) "." counter(fourth) "." counter(fifth) "." counter(sixth) "." counter(seventh) "." counter(eigth) "." counter(ninth) ". ";
+  counter-increment: ninth;
+}
+ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > li:before {
+  content: counter(first) "." counter(second) "." counter(third) "." counter(fourth) "." counter(fifth) "." counter(sixth) "." counter(seventh) "." counter(eigth) "." counter(ninth) "." counter(tenth) ". ";
+  counter-increment: tenth;
+}
+ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > li:before {
+  content: counter(first) "." counter(second) "." counter(third) "." counter(fourth) "." counter(fifth) "." counter(sixth) "." counter(seventh) "." counter(eigth) "." counter(ninth) "." counter(tenth) "." counter(eleventh) ". ";
+  counter-increment: eleventh;
+}
+ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > li:before {
+  content: counter(first) "." counter(second) "." counter(third) "." counter(fourth) "." counter(fifth) "." counter(sixth) "." counter(seventh) "." counter(eigth) "." counter(ninth) "." counter(tenth) "." counter(eleventh) "." counter(twelth) ". ";
+  counter-increment: twelth;
+}
+ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > li:before {
+  content: counter(first) "." counter(second) "." counter(third) "." counter(fourth) "." counter(fifth) "." counter(sixth) "." counter(seventh) "." counter(eigth) "." counter(ninth) "." counter(tenth) "." counter(eleventh) "." counter(twelth) "." counter(thirteenth) ". ";
+  counter-increment: thirteenth;
+}
+ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > li:before {
+  content: counter(first) "." counter(second) "." counter(third) "." counter(fourth) "." counter(fifth) "." counter(sixth) "." counter(seventh) "." counter(eigth) "." counter(ninth) "." counter(tenth) "." counter(eleventh) "." counter(twelth) "." counter(thirteenth) "." counter(fourteenth) ". ";
+  counter-increment: fourteenth;
+}
+ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > li:before {
+  content: counter(first) "." counter(second) "." counter(third) "." counter(fourth) "." counter(fifth) "." counter(sixth) "." counter(seventh) "." counter(eigth) "." counter(ninth) "." counter(tenth) "." counter(eleventh) "." counter(twelth) "." counter(thirteenth) "." counter(fourteenth) "." counter(fifteenth) ". ";
+  counter-increment: fifteenth;
+}
+ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > li:before {
+  content: counter(first) "." counter(second) "." counter(third) "." counter(fourth) "." counter(fifth) "." counter(sixth) "." counter(seventh) "." counter(eigth) "." counter(ninth) "." counter(tenth) "." counter(eleventh) "." counter(twelth) "." counter(thirteenth) "." counter(fourteenth) "." counter(fifteenth) "." counter(sixthteenth) ". ";
+  counter-increment: sixthteenth;
+}
+ol {
+  text-indent: 0px;
+}
+ol > ol {
+  text-indent: 10px;
+}
+ol > ol > ol {
+  text-indent: 20px;
+}
+ol > ol > ol > ol {
+  text-indent: 30px;
+}
+ol > ol > ol > ol > ol {
+  text-indent: 40px;
+}
+ol > ol > ol > ol > ol > ol {
+  text-indent: 50px;
+}
+ol > ol > ol > ol > ol > ol > ol {
+  text-indent: 60px;
+}
+ol > ol > ol > ol > ol > ol > ol > ol {
+  text-indent: 70px;
+}
+ol > ol > ol > ol > ol > ol > ol > ol > ol {
+  text-indent: 80px;
+}
+ol > ol > ol > ol > ol > ol > ol > ol > ol > ol {
+  text-indent: 90px;
+}
+ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > ol {
+  text-indent: 100px;
+}
+ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > ol {
+  text-indent: 110px;
+}
+ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > ol {
+  text-indent: 120px;
+}
+ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > ol {
+  text-indent: 130px;
+}
+ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > ol {
+  text-indent: 140px;
+}
+ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > ol > ol {
+  text-indent: 150px;
+}
+
+</style>
+</head>
+<body>
+EST-COAPS virtual interoperation session #1 (scroll down for newer meetings)<br><br><br>Who is here:<br><ul class="indent"><li>&nbsp; 1. Bjorn Elmers, Nexus</li><ul class="indent"><li>2. Joel (RISE&#x2F;SICS, NexusGroup), and Shahid</li><li>3. Michael Richardson (Sandelman)</li><li>4. Peter van der Stok</li><li>5. Thomas Werner, SIEMENS</li><li><br></li></ul><li><br></li></ul>Groups here:<br><ul class="indent"><li>1. RISE&#x2F;SICS - client EST-COAPS</li><li>2. NexusGroup - server EST-COAPS</li><li>3. Sandelman - server, rudamentary client</li><li>4. Siemens</li></ul><br><br>obiwan-[~](2.4.1) mcr 10211 %host eeylops.sandelman.ca&nbsp;<br>eeylops.sandelman.ca has address 209.87.249.26<br>eeylops.sandelman.ca has IPv6 address 2607:f0b0:f:3::26<br><br><a href="http&#x3a;&#x2F;&#x2F;13&#x2e;80&#x2e;5&#x2e;221&#x3a;8080&#x2F;pgwy&#x2F;ping">http:&#x2F;&#x2F;13.80.5.221:8080&#x2F;pgwy&#x2F;ping</a>&nbsp;&nbsp; - UDP, COAPS to port 5684.<br><br>calfornium for java.<br><br><br>Thomas Werner: introduced by Panos.<br>&nbsp;&nbsp; working with Oscar, Oliver at Fairhair Alliance.<br>&nbsp;&nbsp; server side component for domain registrar.<br>&nbsp;&nbsp; HTTP + COAP, COAP-EST, also for BRSKI.<br><br>Wish to exchange a basic certificate for trust establishment. and doing the initial enrolment.<br><br>NEXUS has some trust anchors to exchange.<br><br>Trust anchors can be imported by all.<br>Exhange IdevID<br>Each reponsible for generating IdevID and produce certificate as shared TA.<br><br>1) share trust anchors for IDevID.<br>2) have &quot;allow all&quot; policy for server side policy.<br>3)&nbsp;<br><br>IPv4 vs IPv6?&nbsp; Instance hosted on AWS, only supports IPv4.<br>&nbsp; RISE SICS talks IPv6, Nexus talks IPv4, we have solved it through:<br>&nbsp; <a href="https&#x3a;&#x2F;&#x2F;jool&#x2e;mx&#x2F;en&#x2F;documentation&#x2e;html">https:&#x2F;&#x2F;jool.mx&#x2F;en&#x2F;documentation.html</a><br>&nbsp;&nbsp;<br>Test cases with delays.&nbsp; <a href="http&#x3a;&#x2F;&#x2F;www&#x2e;sandelman&#x2e;ca&#x2F;tmp&#x2F;interop&#x2d;spec&#x2d;est&#x2d;coaps&#x2e;html">http:&#x2F;&#x2F;www.sandelman.ca&#x2F;tmp&#x2F;interop-spec-est-coaps.html</a><br><br>Set up a Google Sheets page with X x Y list of test cases X end-points, and we can mark columns&#x2F;rows as not yet implemented.<br><ul class="indent"><li><a href="https&#x3a;&#x2F;&#x2F;docs&#x2e;google&#x2e;com&#x2F;spreadsheets&#x2F;d&#x2F;1LMMrau0D8ht0CASDZd7NLDKdCn3e0r57cnahyx&#x2d;U2K8&#x2F;edit&#x3f;usp&#x3d;sharing">https:&#x2F;&#x2F;docs.google.com&#x2F;spreadsheets&#x2F;d&#x2F;1LMMrau0D8ht0CASDZd7NLDKdCn3e0r57cnahyx-U2K8&#x2F;edit?usp=sharing</a></li></ul><br>Discussion on: should we assume that coaps-paths _always_ contain the &quot;.well-known&quot;-prefix?<br><br>&#x2F;.well-known&#x2F;est&#x2F;sen&nbsp; -&gt; maps to: &#x2F;e&#x2F;sen<br><br><br><br>Discovery will be at: &quot;&#x2F;.well-known&#x2F;core&quot; -OK<br>e.g.: the simpleenroll endpoint will be:&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp; Option 1) &quot;&#x2F;.well-known&#x2F;est&#x2F;sen&quot;&nbsp;&nbsp; ---&gt; Option 1 is preferred for the beginning of interOp<br>&nbsp;&nbsp;&nbsp; Option 2) &quot;&#x2F;est&#x2F;sen&quot;&nbsp;<br><br><br>Oct. 16: next meeting.<br>Oct. 23: third meeting.<br><br>Q1: Fix a number of examples that should be POST rather than GET.<br><br>Q2: Got impression that everything was CBOR encapsulated...&nbsp;<br>&nbsp; No, just multipart reply for server generated key.<br>&nbsp;&nbsp;<br>&nbsp;&nbsp;<br><br><br><br><br><br>EST-COAPS virtual interoperation session #2 (scroll down for newer meetings)<br>October 16, 2018<br>&nbsp;&nbsp; connecting to conference: <a href="https&#x3a;&#x2F;&#x2F;appear&#x2e;in&#x2F;est&#x2d;coaps">https:&#x2F;&#x2F;appear.in&#x2F;est-coaps</a><br><br>Who is here:<br><ul class="indent"><li>1. Michael Richardson (Sandelman)</li><li>2. Bj&#246;rn Elmers (Nexusgroup)</li><li>2. &lt;PLEASE SIGN IN&gt;</li><ul class="indent"><li><br></li></ul></ul>Groups here:<br><ul class="indent"><li>1. Sandelman - server, rudamentary client</li><li>2. Nexusgroup, server</li></ul><br><br>
+</body>
+</html>
