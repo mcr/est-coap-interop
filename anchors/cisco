@@ -1,0 +1,5 @@
+The client Root and Intermediate CAs for the Cisco clients are 
+Root CA(eccroot.pem): https://www.cisco.com/security/pki/certs/eccroot.pem
+Intermediate CA(sudi-ca.pem): https://www.cisco.com/security/pki/certs/ACT2ECCSUDI.pem 
+
+Please note you need to trust both in the server, because the client will not send the intermediate CA cert. 
