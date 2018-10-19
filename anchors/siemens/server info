@@ -1,0 +1,11 @@
+The Siemens Anima (BRSKI/EST) interop system at https://brski-test.siemens-bt.net:8443/   is updated as follows:
+-	CBOR wrapping only for response to “/skg” endpoint 
+-	Current trust anchors imported: https://github.com/mcr/est-coap-interop/tree/master/anchors 
+
+Feel free to give it a try and do some testing:
+coaps://brski-test.siemens-bt.net/.well-known/core
+coaps://brski-test.siemens-bt.net/.well-known/est/crts
+coaps://brski-test.siemens-bt.net/.well-known/est/sen
+coaps://brski-test.siemens-bt.net/.well-known/est/sren
+coaps://brski-test.siemens-bt.net/.well-known/est/skg 
+ coaps://brski-test.siemens-bt.net/.well-known/est/att 
